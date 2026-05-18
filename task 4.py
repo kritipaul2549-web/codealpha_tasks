@@ -1,0 +1,60 @@
+# AI Style Chatbot using Python
+# Concepts Used:
+# if-elif, functions, loops, input/output
+
+def chatbot():
+
+    print("====================================")
+    print("        AI ASSISTANT CHATBOT")
+    print("====================================")
+    print("Hello! I am your virtual assistant.")
+    print("You can chat with me or type 'bye' to exit.\n")
+
+    while True:
+
+        user = input("You: ").lower()
+
+        # Greetings
+        if user == "hello" or user == "hi":
+            print("Bot: Hello! How can I help you today?")
+
+        # Asking about chatbot
+        elif user == "how are you":
+            print("Bot: I'm doing great! Thanks for asking.")
+
+        # Asking name
+        elif user == "what is your name":
+            print("Bot: I am an AI Assistant chatbot.")
+
+        # Asking time
+        elif user == "time":
+            from datetime import datetime
+            current_time = datetime.now().strftime("%I:%M %p")
+            print("Bot: Current time is", current_time)
+
+        # Asking date
+        elif user == "date":
+            from datetime import date
+            today = date.today()
+            print("Bot: Today's date is", today)
+
+        # Help command
+        elif user == "help":
+            print("Bot: I can help you with:")
+            print("- Greetings")
+            print("- Time")
+            print("- Date")
+            print("- Basic conversation")
+
+        # Goodbye
+        elif user == "bye":
+            print("Bot: Goodbye! Have a wonderful day.")
+            break
+
+        # Unknown questions
+        else:
+            print("Bot: Sorry, I am still learning.")
+            print("Bot: Please try another question.")
+
+# Function call
+chatbot()
